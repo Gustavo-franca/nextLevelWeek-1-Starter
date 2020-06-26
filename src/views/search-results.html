@@ -1,0 +1,56 @@
+{% extends "partials/layout.html" %}
+
+{% block title %}
+    <title>Criar um ponto de Coleta</title>
+{% endblock title %}
+{% block style %}
+    <link rel="stylesheet" href="/styles/seach-point.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+{% endblock style %}
+
+{% set pageId = "page-search-point" %}
+
+{% block content %}
+    <header>
+        <img src="/assets/logo.svg" alt="Logomarca">
+        <a href="/">
+            <span></span>
+            Voltar para home</a>
+    </header>
+    <main>
+
+        {% if total > 0 %}
+             <h4>
+            <strong>{{total}} pontos</strong>
+            Encontrados.
+            </h4>
+            <div class="cards">
+            {% for place in places %}
+
+                <div class="card">
+                    <img src="{{place.image}}" alt="{{place.name}}">
+                    <h2>{{place.name}}</h2>
+                    <div>
+                        <h3>{{place.items}}</h3>
+                        <p>{{place.address}}, {{place.address2}}</p>
+                    </div>
+                    </div>
+            {% endfor %}
+            </div>
+        </div>
+
+
+
+        {%else%}
+            <h4>
+            <strong>Nenhum ponto</strong>
+            Encontrado.
+            </h4>
+        {% endif %}
+       
+    </main>
+{% endblock content %}
+
+{% block scripts %}
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+{% endblock scripts %}

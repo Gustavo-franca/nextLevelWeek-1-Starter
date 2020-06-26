@@ -1,0 +1,30 @@
+<div id="modal" class="hidden">
+    <div class="content">
+        <div class="header">
+            <div>
+                <a class="link-modal-close" href="">Fechar</a>
+            </div>
+            <h1>Pontos de Coleta</h1>
+        </div>
+        <form action="search-results">
+            <label for="state">Seach</label>
+            <div class="field-group">
+                <div class="field">
+                    <label for="uf">Estado</label>
+                    <select name="uf" required="required">
+                        <option value="">Selecione o Estado</option>
+                    </select>
+
+                </div>
+                <div class="field">
+                    <label for="city">Cidade</label>
+                    <select name="city" disabled="disabled" required="required">
+                        <option value="">Selecione a Cidade</option>
+                    </select>
+                </div>
+                <input type="hidden" name="state" value="">
+            </div>
+            <button type="submit">Buscar</button>
+        </form>
+    </div>
+</div>
